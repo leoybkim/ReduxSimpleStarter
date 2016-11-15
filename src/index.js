@@ -1,15 +1,32 @@
+// looks for node modules named react
+// react is actually 2 libraries
+// react creates components
+// react-dom renders component to dom
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
 
-import App from './components/app';
-import reducers from './reducers';
+// Create new component that makes HTML
+// const --> ES6
+// works like var, similar to final/constant
+//const App = function() {
+const App = () => {
+  return <div>Hello world</div>; // JSX
+}
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+/* equivalent to
+"use strict";
+var _temporalUndefined = {};
+var App = _temporalUndefined;
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+App = function App() {
+  return React.createElement(
+  "div",
+  null,
+  "Hello world"
+  );
+};*/
+
+// Render component in the DOM
+// webpack and babel does the translation of JSX to vanilla javascript that can be understood by the browser
+// Need to pass an instance of class App, second argument defines where this instance will render to
+ReactDOM.render(<App />, document.querySelector('.container'));
