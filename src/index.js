@@ -5,13 +5,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// customized components
+import SearchBar from './components/search_bar';
+
+const API_KEY = 'AIzaSyBHxfKWIingnjD_m3SwCPn7Olz0-rODDpE';
+
+
+
 // Create new component that makes HTML
 // const --> ES6
 // works like var, similar to final/constant
-//const App = function() {
+// const App = function() {
 const App = () => {
-  return <div>Hello world</div>; // JSX
-}
+  return <div>
+           <SearchBar/>
+         </div>; // JSX
+};
 
 /* equivalent to
 "use strict";
