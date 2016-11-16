@@ -39,10 +39,16 @@ class SearchBar extends Component {
           // initially set to empty string defined from constructor
           // when user event is detected, setState runs and rerenders setting the term value to new user input
           value = {this.state.term}
-          onChange={event => this.setState({ term: event.target.value })} />
+          //onChange={event => this.setState({ term: event.target.value })} />
+          onChange={event => this.onInputChange(event.target.value)} />
         {/*Value of the input: {this.state.term}*/}
       </div>
     );
+  }
+
+  onInputChange (term) {
+    this.setState({term});
+    this.props.onSearchTermChange(term);
   }
 
   // event (can be named anything else) holds the value of what has changed
