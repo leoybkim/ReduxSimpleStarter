@@ -34,7 +34,7 @@ class SearchBar extends Component {
     //return <input onChange={event => console.log(event.target.value)} />; // all hail to the arrow function
 
     return (
-      <div>
+      <div className="search-bar">
         <input
           // initially set to empty string defined from constructor
           // when user event is detected, setState runs and rerenders setting the term value to new user input
